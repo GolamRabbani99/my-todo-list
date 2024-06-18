@@ -1,0 +1,81 @@
+[debug] [2024-06-18T11:53:06.601Z] ----------------------------------------------------------------------
+[debug] [2024-06-18T11:53:06.603Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2024-06-18T11:53:06.604Z] CLI Version:   13.11.2
+[debug] [2024-06-18T11:53:06.604Z] Platform:      win32
+[debug] [2024-06-18T11:53:06.604Z] Node Version:  v20.14.0
+[debug] [2024-06-18T11:53:06.604Z] Time:          Tue Jun 18 2024 12:53:06 GMT+0100 (British Summer Time)
+[debug] [2024-06-18T11:53:06.604Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-18T11:53:06.683Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-18T11:53:06.686Z] > authorizing via signed-in user (golamrabbani.com@gmail.com)
+[debug] [2024-06-18T11:53:06.687Z] [iam] checking project my-todo-list-995ec for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-06-18T11:53:06.699Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-todo-list-995ec:testIamPermissions [none]
+[debug] [2024-06-18T11:53:06.700Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-todo-list-995ec:testIamPermissions x-goog-quota-user=projects/my-todo-list-995ec
+[debug] [2024-06-18T11:53:06.701Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-todo-list-995ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-06-18T11:53:07.647Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-todo-list-995ec:testIamPermissions 200
+[debug] [2024-06-18T11:53:07.648Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-todo-list-995ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-06-18T11:53:07.650Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/my-todo-list-995ec [none]
+[debug] [2024-06-18T11:53:08.669Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/my-todo-list-995ec 200
+[debug] [2024-06-18T11:53:08.670Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/my-todo-list-995ec {"projectId":"my-todo-list-995ec","projectNumber":"927949783039","displayName":"my-todo-list","name":"projects/my-todo-list-995ec","resources":{"hostingSite":"my-todo-list-995ec"},"state":"ACTIVE","etag":"1_1f5feff9-20c4-4651-8bc8-dbd3763b86a8"}
+[info] 
+[info] === Deploying to 'my-todo-list-995ec'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-06-18T11:53:08.682Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions [none]
+[debug] [2024-06-18T11:53:08.683Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-06-18T11:53:10.413Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions 200
+[debug] [2024-06-18T11:53:10.414Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions {"name":"projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[my-todo-list-995ec]: beginning deploy... 
+[info] i  hosting[my-todo-list-995ec]: found 1 files in y 
+[debug] [2024-06-18T11:53:10.422Z] [hosting] uploading with 200 concurrency
+[debug] [2024-06-18T11:53:10.426Z] [hosting] hash cache [eQ] stored for 1 files
+[debug] [2024-06-18T11:53:10.427Z] [hosting][hash queue][FINAL] {"max":0,"min":0,"avg":0,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2}
+[debug] [2024-06-18T11:53:10.428Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc:populateFiles [none]
+[debug] [2024-06-18T11:53:10.429Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc:populateFiles {"files":{"/index.html":"bf0442fd4291d2bf919afc395cc60d3ab49bd3491806ab035e28301e0e8f052a"}}
+[debug] [2024-06-18T11:53:11.015Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc:populateFiles 200
+[debug] [2024-06-18T11:53:11.017Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc/files"}
+[debug] [2024-06-18T11:53:11.018Z] [hosting][populate queue][FINAL] {"max":593,"min":593,"avg":593,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":593}
+[debug] [2024-06-18T11:53:11.019Z] [hosting] uploads queued: 0
+[debug] [2024-06-18T11:53:11.020Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1718711591020}
+[info] i  hosting: upload complete 
+[info] +  hosting[my-todo-list-995ec]: file upload complete 
+[debug] [2024-06-18T11:53:11.023Z] [hosting] deploy completed after 606ms
+[debug] [2024-06-18T11:53:11.024Z] [
+  {
+    "config": {
+      "public": "y",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "my-todo-list-995ec"
+    },
+    "version": "projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc"
+  }
+]
+[info] i  hosting[my-todo-list-995ec]: finalizing version... 
+[debug] [2024-06-18T11:53:11.031Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc updateMask=status%2Cconfig
+[debug] [2024-06-18T11:53:11.032Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2024-06-18T11:53:11.647Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc 200
+[debug] [2024-06-18T11:53:11.648Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc {"name":"projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-06-18T11:53:02.721904Z","createUser":{"email":"golamrabbani.com@gmail.com"},"finalizeTime":"2024-06-18T11:53:04.515605Z","finalizeUser":{"email":"golamrabbani.com@gmail.com"}}
+[debug] [2024-06-18T11:53:11.650Z] [hosting] finalized version for my-todo-list-995ec:[object Object]
+[info] +  hosting[my-todo-list-995ec]: version finalized 
+[info] i  hosting[my-todo-list-995ec]: releasing new version... 
+[debug] [2024-06-18T11:53:11.653Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/channels/live/releases versionName=projects%2F927949783039%2Fsites%2Fmy-todo-list-995ec%2Fversions%2F7fb7ccba520fdffc
+[debug] [2024-06-18T11:53:11.653Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/channels/live/releases {}
+[debug] [2024-06-18T11:53:12.490Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/channels/live/releases 200
+[debug] [2024-06-18T11:53:12.492Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-todo-list-995ec/channels/live/releases {"name":"projects/927949783039/sites/my-todo-list-995ec/channels/live/releases/1718711584600000","version":{"name":"projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-06-18T11:53:02.721904Z","createUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"},"finalizeTime":"2024-06-18T11:53:04.515605Z","finalizeUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"}},"type":"DEPLOY","releaseTime":"2024-06-18T11:53:04.600Z","releaseUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"}}
+[debug] [2024-06-18T11:53:12.493Z] [hosting] release: {"name":"projects/927949783039/sites/my-todo-list-995ec/channels/live/releases/1718711584600000","version":{"name":"projects/927949783039/sites/my-todo-list-995ec/versions/7fb7ccba520fdffc","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-06-18T11:53:02.721904Z","createUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"},"finalizeTime":"2024-06-18T11:53:04.515605Z","finalizeUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"}},"type":"DEPLOY","releaseTime":"2024-06-18T11:53:04.600Z","releaseUser":{"email":"golamrabbani.com@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocLhNbmByZBxBNMiwmbVE0-auul5dZedot_vMIlcoX8WrlwHFvBt"}}
+[info] +  hosting[my-todo-list-995ec]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/my-todo-list-995ec/overview
+[info] Hosting URL: https://my-todo-list-995ec.web.app

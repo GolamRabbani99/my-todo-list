@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react";
+// import Button from "@mui/material/Button";
 import "./App.css";
 import Todo from "./Todo";
 import { Button, FormControl, Input, InputLabel } from "@mui/material";
-import { collection, onSnapshot, query, addDoc } from "firebase/firestore";
+import {
+  QuerySnapshot,
+  collection,
+  onSnapshot,
+  query,
+} from "firebase/firestore";
 import { db } from "./firebase";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState(""); // remembering input
+  const [todos, setTodos] = useState([
+    "take the dogs",
+    "take the cate out",
+    "new items",
+  ]);
+  const [input, setInput] = useState(""); //rembering input
 
-  async function addTodo(event) {
-    event.preventDefault(); // prevent automatic submit
-
-    // Add a new todo document to Firestore
-    try {
-      await addDoc(collection(db, "todos"), {
-        text: input,
-        timestamp: new Date(),
-      });
-      setInput(""); // clear up input field
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
+  function addTodo(event) {
+    setTodos([...todos, input]);
+    event.preventDefault(); //prevent automatic submit
+    setInput(""); //clear up input field
   }
 
   useEffect(() => {
@@ -35,13 +36,12 @@ function App() {
     });
     return () => unsub();
   }, []);
-
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <h1>hello world </h1>
       <form>
         <FormControl>
-          <InputLabel>Enter your list</InputLabel>
+          <InputLabel> entry your list</InputLabel>
           <Input
             id="my-input"
             value={input}
@@ -60,8 +60,8 @@ function App() {
       </form>
 
       <ul>
-        {todos.map((todo) => (
-          <Todo key={todo.id} text={todo.text} />
+        {todos.map((todo, index) => (
+          <Todo key={index} text={todo} />
         ))}
       </ul>
     </div>
