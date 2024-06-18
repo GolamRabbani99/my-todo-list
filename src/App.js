@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+
+
+import React, { useEffect, useState } from "react";
+
 import "./App.css";
-import Todo from "./Todo";
+import TodoItem from "./Todo";
 import { Button, FormControl, Input, InputLabel } from "@mui/material";
 import { collection, onSnapshot, query, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
@@ -38,10 +41,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <h1>Todo List</h1>
       <form>
         <FormControl>
-          <InputLabel>Enter your list</InputLabel>
+          <InputLabel>Enter your task</InputLabel>
           <Input
             id="my-input"
             value={input}
@@ -55,15 +58,19 @@ function App() {
           onClick={addTodo}
           variant="contained"
         >
-          Add Todos
+          Add Todo
         </Button>
       </form>
 
-      <ul>
-        {todos.map((todo) => (
-          <Todo key={todo.id} text={todo.text} />
-        ))}
-      </ul>
+      {todos.length > 0 ? (
+        <ul>
+          {todos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
+        </ul>
+      ) : (
+        <p>No todos found.</p>
+      )}
     </div>
   );
 }
